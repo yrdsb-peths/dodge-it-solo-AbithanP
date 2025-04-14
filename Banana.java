@@ -10,6 +10,13 @@ public class Banana extends Actor
         {
             resetBanana();
         }
+        
+        if (isTouching(Hero.class))
+        {
+            SadFace sadFace = new SadFace();
+            getWorld().addObject(sadFace, 300, 200);
+            getWorld().removeObject(this);
+        }
     }
     
     public void resetBanana()
